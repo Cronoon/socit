@@ -5,57 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Socit.com Web and Database Development and Maintenance</title>
   <style>
+    /* Full viewport height flexbox centered both ways */
     body {
-      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;  /* horizontal center */
+      align-items: center;      /* vertical center */
+      min-height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e6f0fa; /* light blue-gray background */
       padding: 20px;
-      background-color: #f4f4f4;
+      color: #333; /* dark grey text */
     }
-    header, footer {
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-    }
-    main {
+
+    /* Container for the whole content (header + main + footer) */
+    .container {
       background: white;
-      padding: 20px;
-      margin-top: 10px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 70, 160, 0.2);
+      max-width: 600px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
     }
+
+    header, footer {
+      background-color: #1a3c72; /* dark blue */
+      color: #cce0ff;            /* light blue text */
+      padding: 15px 20px;
+      text-align: center;
+      flex-shrink: 0;
+      border-radius: 8px 8px 0 0; /* round top corners for header */
+    }
+
+    footer {
+      border-radius: 0 0 8px 8px; /* round bottom corners for footer */
+      font-size: 0.9em;
+      margin-top: auto; /* push footer to bottom */
+    }
+
+    main {
+      padding: 25px 20px;
+      flex-grow: 1;
+      color: #1a3c72; /* dark blue text */
+    }
+
+    /* Increase line height for list items */
+    main ul {
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
     main p.email {
-      margin-top: 20px;
+      margin-top: 25px;
       font-weight: bold;
+      text-align: center;
+      color: #1a3c72;
     }
+
     main p.email a {
-      color: #333;
+      color: #1a3c72;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
     }
+
     main p.email a:hover {
-      text-decoration: underline;
+      border-color: #6395d6;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Socit.com Web and Database Development and Maintenance</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Socit.com Web and Database Development and Maintenance</h1>
+    </header>
 
-  <main>
-    <h2>UK and Ireland internet solutions since 1999.</h2>
-    <h2>Get in touch if you require:</h2>
-    <ul>
-      <li>Web site or app development</li>
-      <li>Web site or app maintenance</li>
-      <li>Database development or maintenance</li>
-      <li>Data Processing &amp; Analysis</li>
-    </ul>
-    <p class="email"><a href="mailto:info@socit.com">info@socit.com</a></p>
-  </main>
+    <main>
+      <h2>UK and Ireland internet solutions since 1999.</h2>
+      <h2>Get in touch if you require:</h2>
+      <ul>
+        <li>Web site or app development</li>
+        <li>Web site or app maintenance</li>
+        <li>Database development or maintenance</li>
+        <li>Data Processing &amp; Analysis</li>
+      </ul>
+      <p class="email"><a href="mailto:info@socit.com">info@socit.com</a></p>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 socit.com</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 socit.com</p>
+    </footer>
+  </div>
 </body>
 </html>
