@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,24 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Socit.com Web and Database Development and Maintenance</title>
   <style>
+    /* Make body a flex container column that fills viewport height */
     body {
-      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       margin: 0;
-      padding: 20px;
+      font-family: Arial, sans-serif;
       background-color: #f4f4f4;
+      padding: 20px 0;
     }
+
+    /* Header and footer with fixed styling */
     header, footer {
       background-color: #333;
       color: white;
       padding: 10px 20px;
       text-align: center;
+      flex-shrink: 0; /* don't shrink */
     }
+
+    /* Main content grows and is centered */
     main {
       background: white;
       padding: 20px;
-      margin-top: 10px;
+      margin: 10px auto;  /* vertical margin + auto horizontal centering */
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px; /* controls max width */
+      flex-grow: 1; /* fill remaining vertical space */
+      width: 90%; /* responsive width */
+    }
+
+    /* Email styling */
+    main p.email {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    main p.email a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    main p.email a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -35,12 +62,12 @@
   <main>
     <h2>Get in touch if you require:</h2>
     <ul>
-    	<li>Web site or app development</li>
-    	<li>Web site or app maintenance</li>
-    	<li>Database development or maintenance</li>
-    	<li>Data Processing & Analysis</li>
+      <li>Web site or app development</li>
+      <li>Web site or app maintenance</li>
+      <li>Database development or maintenance</li>
+      <li>Data Processing &amp; Analysis</li>
     </ul>
-    <p><p><strong>info@socit.com</strong></p>.</p>
+    <p class="email"><a href="mailto:info@socit.com">info@socit.com</a></p>
   </main>
 
   <footer>
