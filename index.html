@@ -96,8 +96,11 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 socit.com</p>
+      <p>&copy; <span id="year"></span> socit.com</p>
     </footer>
   </div>
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
