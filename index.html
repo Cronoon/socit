@@ -1,113 +1,444 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional web development, database design, and maintenance services serving Northern Ireland towns including Belfast, Derry, Lisburn, Newry, and Craigavon. Expert solutions for websites, apps, and data processing." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Socit.com provides web, app, database, maintenance, data processing and analysis services across the UK and Ireland.">
+  <meta name="theme-color" content="#08111f">
 
-<meta name="keywords" content="web development, database development, website maintenance, app development, data processing, Northern Ireland, Belfast web developer, Derry database services, Lisburn web design, Newry app maintenance, Craigavon data analysis" />
+  <title>Socit.com | Web, App & Database Development</title>
 
-<meta name="author" content="Socit.com" />
-  <title>Socit.com Web and Database Development and Maintenance</title>
   <style>
-    /* Full viewport height flexbox centered both ways */
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1a2c;
+      --panel: rgba(255, 255, 255, 0.07);
+      --panel-border: rgba(255, 255, 255, 0.13);
+      --text: #f7f9fc;
+      --muted: #b8c3d1;
+      --accent: #62d7c6;
+      --accent-strong: #8ff0e2;
+      --max-width: 1120px;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      display: flex;
-      justify-content: center;  /* horizontal center */
-      align-items: center;      /* vertical center */
-      min-height: 100vh;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #e6f0fa; /* light blue-gray background */
-      padding: 20px;
-      color: #333; /* dark grey text */
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(98, 215, 198, 0.16), transparent 30rem),
+        radial-gradient(circle at 90% 20%, rgba(90, 130, 255, 0.13), transparent 28rem),
+        linear-gradient(145deg, #07101c 0%, #0b1727 52%, #07101c 100%);
+      line-height: 1.6;
     }
 
-    /* Container for the whole content (header + main + footer) */
-    .container {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 70, 160, 0.2);
-      max-width: 600px;
-      width: 90%;
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
       display: flex;
-      flex-direction: column;
-      min-height: 400px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 0;
     }
 
-    header, footer {
-      background-color: #1a3c72; /* dark blue */
-      color: #cce0ff;            /* light blue text */
-      padding: 15px 20px;
-      text-align: center;
-      flex-shrink: 0;
-      border-radius: 8px 8px 0 0; /* round top corners for header */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      font-size: 1.15rem;
     }
-h2 {text-align:center;}
-    footer {
-      border-radius: 0 0 8px 8px; /* round bottom corners for footer */
-      font-size: 0.9em;
-      margin-top: auto; /* push footer to bottom */
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 2.45rem;
+      height: 2.45rem;
+      border-radius: 0.8rem;
+      color: #07101c;
+      background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+      box-shadow: 0 10px 30px rgba(98, 215, 198, 0.24);
+    }
+
+    .header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .header-link:hover,
+    .header-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(143, 240, 226, 0.45);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     main {
-      padding: 25px 20px;
-      flex-grow: 1;
-      color: #1a3c72; /* dark blue text */
+      padding: 4rem 0 5rem;
     }
 
-    /* Increase line height for list items */
-    main ul {
-      line-height: 1.8;
-      padding-left: 20px;
-      justify-self: anchor-center;
-      margin:3em 0em;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+      min-height: 68vh;
     }
 
-    main p.email {
-      margin-top: 25px;
-      font-weight: bold;
-      text-align: center;
-      color: #1a3c72;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1.1rem;
+      color: var(--accent-strong);
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    main p.email a {
-      color: #1a3c72;
+    .eyebrow::before {
+      content: "";
+      width: 2rem;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: 0.93;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 1.6rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 800;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
-h2.shft{margin-left:-2em;}
-    main p.email a:hover {
-      border-color: #6395d6;
-      text-decoration: none;
+
+    .button-primary {
+      color: #06101b;
+      background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+      box-shadow: 0 14px 35px rgba(98, 215, 198, 0.2);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--panel-border);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-3px);
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      box-shadow: 0 18px 42px rgba(98, 215, 198, 0.3);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.5rem, 4vw, 2.35rem);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -4rem -5rem auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: rgba(98, 215, 198, 0.12);
+      filter: blur(2px);
+    }
+
+    .service-card h2 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      color: var(--accent-strong);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .service-card p {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+    }
+
+    .service-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.75rem;
+      align-items: start;
+      padding: 1rem;
+      border-radius: 15px;
+      background: rgba(5, 13, 24, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .service-number {
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.7rem;
+      color: var(--accent-strong);
+      background: rgba(98, 215, 198, 0.1);
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .service-list strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .service-list span:last-child {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 4rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--panel-border);
+      border-bottom: 1px solid var(--panel-border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .trust-strip strong {
+      color: var(--text);
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.6rem 0 2.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .site-footer a {
+      text-decoration-color: rgba(184, 195, 209, 0.45);
+      text-underline-offset: 0.22em;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(143, 240, 226, 0.85);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        padding-top: 2.5rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .service-card {
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-header {
+        align-items: flex-start;
+      }
+
+      .header-link {
+        min-height: auto;
+        padding: 0.55rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 16vw, 4.5rem);
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Socit.com Web and Database Development and Maintenance</h1>
-    </header>
+  <header class="site-shell site-header">
+    <a class="brand" href="/" aria-label="Socit.com home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>socit.com</span>
+    </a>
 
-    <main>
-      <h2>UK and Ireland internet solutions since 1999.</h2>
-      <h2 class="shft">Get in touch if you require:</h2>
-      <ul>
-        <li>Web site or app development</li>
-        <li>Web site or app maintenance</li>
-        <li>Database development or maintenance</li>
-        <li>Data Processing &amp; Analysis</li>
-      </ul>
-      <p class="email"><a href="mailto:info@socit.com">info@socit.com</a></p>
-    </main>
+    <a class="header-link" href="mailto:info@socit.com">info@socit.com</a>
+  </header>
 
-    <footer>
-      <p>&copy; <span id="year"></span> socit.com</p>
-    </footer>
-  </div>
+  <main class="site-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">UK &amp; Ireland internet solutions since 1999</p>
+
+        <h1 id="hero-title">Digital systems that keep working.</h1>
+
+        <p class="hero-copy">
+          Practical web, app and database development for organisations that value
+          dependable technology, clear communication and long-term support.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:info@socit.com?subject=Project%20enquiry">
+            Discuss a project
+          </a>
+          <a class="button button-secondary" href="#services">
+            View services
+          </a>
+        </div>
+      </div>
+
+      <aside class="service-card" id="services" aria-labelledby="services-title">
+        <h2 id="services-title">What we do</h2>
+        <p>Focused technical support from initial build through ongoing maintenance.</p>
+
+        <ul class="service-list">
+          <li>
+            <span class="service-number">01</span>
+            <span>
+              <strong>Web &amp; app development</strong>
+              <span>Responsive, accessible digital products built around real business needs.</span>
+            </span>
+          </li>
+          <li>
+            <span class="service-number">02</span>
+            <span>
+              <strong>Maintenance &amp; support</strong>
+              <span>Updates, fixes and dependable care for existing websites and applications.</span>
+            </span>
+          </li>
+          <li>
+            <span class="service-number">03</span>
+            <span>
+              <strong>Database development</strong>
+              <span>Structured, maintainable data systems designed for reliability and growth.</span>
+            </span>
+          </li>
+          <li>
+            <span class="service-number">04</span>
+            <span>
+              <strong>Data processing &amp; analysis</strong>
+              <span>Clearer information, cleaner workflows and useful insight from your data.</span>
+            </span>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="trust-strip" aria-label="Company highlights">
+      <span><strong>Established:</strong> 1999</span>
+      <span><strong>Coverage:</strong> UK &amp; Ireland</span>
+      <span><strong>Contact:</strong> info@socit.com</span>
+    </section>
+  </main>
+
+  <footer class="site-shell site-footer">
+    <span>&copy; <span id="year"></span> socit.com</span>
+    <a href="mailto:info@socit.com">Start a conversation</a>
+  </footer>
+
   <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
