@@ -66,15 +66,17 @@
       padding: 1.25rem 0;
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      text-decoration: none;
-      font-size: 1.15rem;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+  display: block;
+}
 
     .brand-mark {
       display: grid;
@@ -364,10 +366,10 @@
 
 <body>
   <header class="site-shell site-header">
+
     <a class="brand" href="/" aria-label="Socit.com home">
-      <span class="brand-mark" aria-hidden="true">S</span>
-      <span>socit.com</span>
-    </a>
+  <img src="socitlogo1.png" alt="Socit.com Logo" class="brand-logo">
+</a>
 
     <a class="header-link" href="mailto:info@socit.com">info@socit.com</a>
   </header>
